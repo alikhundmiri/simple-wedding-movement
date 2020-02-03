@@ -1,89 +1,60 @@
-# Introduction
+# [Start Bootstrap - Bare](https://startbootstrap.com/template-overviews/bare/)
 
-Netlify StatusKit is a template to deploy your own Status pages on Netlify.
+[Bare](http://startbootstrap.com/template-overviews/bare/) is a bare HTML starter template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This template features predefined file paths for Bootstrap and jQuery, so you can quickly create Bootstrap websites.
 
-[![Netlify StatusKit Demo](http://statuskit.netlify.com/statuskit.png)](https://statuskit.netlify.com/)
+## Preview
 
-Netlify StatusKit is released under the [MIT License](LICENSE).
-Please make sure you understand its [implications and guarantees](https://writing.kemitchell.com/2016/09/21/MIT-License-Line-by-Line.html).
+[![Bare Preview](https://startbootstrap.com/assets/img/templates/bare.jpg)](https://blackrockdigital.github.io/startbootstrap-bare/)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-statuskit)
+**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-bare/)**
 
-## Project Status
+## Status
 
-This project is no longer being maintained by netlify staff. This is a community led project and if you are looking to support this project, please get in touch via an issue.
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-bare/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/startbootstrap-bare.svg)](https://www.npmjs.com/package/startbootstrap-bare)
+[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-bare.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-bare)
+[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-bare/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-bare)
+[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-bare/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-bare?type=dev)
 
-### Netlify's Statement
+## Download and Installation
 
-> [Netlify] doesn't currently have the staff to process such contributions.
+To begin using this template, choose one of the following options to get started:
+* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/bare/)
+* Install via npm: `npm i startbootstrap-bare`
+* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-bare.git`
+* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-bare)
 
-## Initial configuration
+## Usage
 
-Click in the Deploy to Netlify button above to create your own site directly and push this repository to your own account.
-Before creating the site, Netlify will ask you to fill required environment variables listed here:
+### Basic Usage
 
-- `STATUSKIT_PAGE_TITLE` - Title to show in the browser for your status site.
-- `STATUSKIT_COMPANY_LOGO` - URL to your company's logo.
-- `STATUSKIT_SUPPORT_CONTACT_LINK` - URL to a support page for your users to talk with you.
-- `STATUSKIT_RESOURCES_LINK` - URL to documentation for your users.
+After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
 
-## Extra configuration
+### Advanced Usage
 
-After the site is created, you can modify the code as much as you want and push it to your GitHub repository. Netlify will pick up changes from there.
+After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
 
-### Reporting systems
+You must have npm and Gulp installed globally on your machine in order to use these features.
 
-You can add systems you want to report about to your Status page. For instance, you might want to tell your users about a status change in your CDN infrastructure but not in your API.
+## Bugs and Issues
 
-Go to `site/config.toml` and change the global `systems` variables. Once that's done, you'll be able to change the status of each one of those systems individually when you open or modify an incident.
+Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-bare/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/bare/).
 
-### Full customization
+## About
 
-This template is based in [Netlify's Victor-Hugo](https://github.com/netlify/victor-hugo) boilerplate.
-To work on it you'll need NPM installed. To download dependencies type `npm run dependencies`, that will check if you have Hugo installed and will download it for you if you don't. It will also run `npm install` for the first time to download extra dependencies. After that, you can run `npm install` every time you want to install packages.
+Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
 
-## Managing incidents
+* https://startbootstrap.com
+* https://twitter.com/SBootstrap
 
-Incidents are plain markdown files inside the `site/content/incidents` directory.
+Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
 
-### Creating new incidents
+* http://davidmiller.io
+* https://twitter.com/davidmillerskt
+* https://github.com/davidtmiller
 
-Adding incidents to your status page is as simple as adding a new document to the incidents collection.
-Create a new incident using npm:
+Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
-```
-npm run new-incident
-```
+## Copyright and License
 
-You'll be asked a series of questions about the incident, then Hugo will generate a new file pre-filled with your responses.
-
-After explaining the current situation in the incident, you can just push the file to GitHub. Netlify will deploy the indicent announcement for you in a matter of seconds.
-
-### Resolving incidents
-
-Everything will be operational again when all incidents are marked with `resolved = true` in the incident frontMatter:
-
-```toml
-+++
-...
-affectedsystems = ["API"]
-resolved = true
-+++
-```
-
-
-### Tracking activity
-
-When there is an update in your incident you can track activity by inserting a timestamp with the update. For example:
-
-```md
-**Update**: We've identified the issue. {{< track "2016-11-22T14:34:00.000Z" >}}
-```
-
-
-# Development
-
-Netlify StatusKit uses NPM to manage dependencies. It also bundles a version of Hugo to work out of the box.
-
-1. Use `npm install` to download dependencies.
-2. Use `npm start` to start the development server.
+Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-bare/blob/gh-pages/LICENSE) license.
